@@ -25,7 +25,7 @@ const App = () => {
   }, []);
   return (
     <div className="app">
-      <nav className="navbar p-2">
+      <nav className="navbar sticky-top p-2">
         <div className="nav-left">
           <Link to={"/home"} className="logo-circle">
             <img
@@ -49,7 +49,6 @@ const App = () => {
           <Link to="/home">
             <button>КАТАЛОГ</button>
           </Link>
-          <button>О НАС</button>
           {!user && (
             <>
               <Link to="/login">
@@ -61,8 +60,6 @@ const App = () => {
               </Link>
             </>
           )}
-          <button>НОВОСТИ</button>
-          <button>КОНТАКТЫ</button>
           <Link to={"dostavka"}><button>ДОСТАВКА ТОВАРОВ</button></Link>
 
           {user && (

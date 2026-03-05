@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../firebase";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Register = () => {
   const [form, setForm] = useState({
@@ -69,8 +69,8 @@ const Register = () => {
           Зарегистрироваться
         </button>
 
-        <p className="m-auto text-center" >
-          Уже есть аккаунт? <a href="/login">Войти</a>
+        <p className="auth-link">
+          Уже есть аккаунт? <Link to="/login">Войти</Link>
         </p>
       </div>
     </div>

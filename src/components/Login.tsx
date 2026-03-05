@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -12,36 +12,32 @@ const Login = () => {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       navigate("/home");
-    } catch (error: any) {
+    } catch {
       alert("Неверный email или пароль");
     }
   };
 
   return (
-    <div className="container py-5">
-      <div className="card p-4">
-        <h3>Admin Login</h3>
+    <div className="auth-container">
+      <div className="auth-card">
+        <h3>Вход</h3>
 
         <input
           type="email"
           placeholder="Email"
-          className="form-control mb-3"
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
           type="password"
-          placeholder="Password"
-          className="form-control mb-3"
+          placeholder="Пароль"
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button className="btn btn-dark w-100" onClick={handleLogin}>
-          Login
-        </button>
+        <button onClick={handleLogin}>Войти</button>
 
-        <p className="m-auto text-center" >
-          Нет аккаунта? <a href="/register">Зарегистрироваться</a>
+        <p className="auth-link">
+          Нет аккаунта? <Link to="/register">Зарегистрироваться</Link>
         </p>
       </div>
     </div>
