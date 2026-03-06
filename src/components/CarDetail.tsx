@@ -74,7 +74,7 @@ const CarDetail = () => {
   };
 
   return (
-    <div className="detail-container">
+    <div className="detail-container text-light">
       <div className="detail-left">
         {car.images && car.images.length > 0 && (
           <>
@@ -103,7 +103,7 @@ const CarDetail = () => {
         )}
       </div>
 
-      <div className="detail-right">
+      <div className="detail-right text-light">
         <h2>{car.name} {car.model}</h2>
         <h3 className="price">{car.price} so'm/kuniga</h3>
 
