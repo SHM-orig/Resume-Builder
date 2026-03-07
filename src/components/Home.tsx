@@ -84,7 +84,7 @@ const Home = () => {
             <div className="hero-content">
               <h1>{slide.title}</h1>
               <p>{slide.desc}</p>
-              <Link to={"car/:id"} className="hero-btn text-light">ПОДРОБНЕЕ</Link>
+              <button className="hero-btn text-light">ПОДРОБНЕЕ</button>
             </div>
           </div>
         ))}
