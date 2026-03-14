@@ -20,25 +20,7 @@ setForm({
 
 }
 
-function save(){
 
-if(editIndex !== null){
-
-const updated = [...experiences];
-updated[editIndex] = form;
-setExperiences(updated);
-
-setEditIndex(null);
-
-}else{
-
-setExperiences([...experiences,form]);
-
-}
-
-setForm({});
-
-}
 
 function editItem(i:number){
 
